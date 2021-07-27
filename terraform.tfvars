@@ -1,0 +1,7 @@
+aws_region              =   "us-east-1"
+subnet_count            =   "2"
+accessing_computer_ip   =   "172.20.208.1"
+keypair-name            =   "keypair"
+cluster_version		    =   "1.20.4"
+# hosted_zone_id          =   "placeholder"
+# hosted_zone_url         =   "placeholder"
