@@ -21,7 +21,7 @@ resource "aws_launch_configuration" "tf_eks" {
   associate_public_ip_address = true
   iam_instance_profile        = "${aws_iam_instance_profile.node.name}"
   image_id                    = "${data.aws_ami.eks-worker.id}"
-  instance_type               = "m4.large"
+  instance_type               = "t3.small"
   name_prefix                 = "terraform-eks"
   security_groups             = ["${aws_security_group.eks-node.id}"]
   user_data_base64            = "${base64encode(local.tf-eks-node-userdata)}"

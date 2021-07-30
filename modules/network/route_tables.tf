@@ -37,12 +37,12 @@ resource "aws_route_table_association" "application" {
   route_table_id = "${aws_route_table.application.*.id[count.index]}"
 }
 
-resource "aws_route_table_association" "database" {
-  count = "${var.subnet_count}"
+# resource "aws_route_table_association" "database" {
+#   count = "${var.subnet_count}"
 
-  subnet_id      = "${aws_subnet.database.*.id[count.index]}"
-  route_table_id = "${aws_route_table.database.id}"
-}
+#   subnet_id      = "${aws_subnet.database.*.id[count.index]}"
+#   route_table_id = "${aws_route_table.database.id}"
+# }
 
 resource "aws_route_table_association" "gateway" {
   count = "${var.subnet_count}"

@@ -4,8 +4,8 @@ resource "aws_vpc" "vpc" {
   enable_dns_hostnames = true
   enable_dns_support = true
   tags = {
-     "Name" = "terraform-eks"
-     "kubernetes.io/cluster/eks" = "shared"
+     "Name" = "vpc-eks"
+     "kubernetes.io/cluster/eks-cluster" = "shared"
   }
 }
 
@@ -31,17 +31,6 @@ resource "aws_subnet" "application" {
   tags = {
      "Name" = "vpc_application"
      "kubernetes.io/cluster/vpc" = "shared"
-  }
-}
-
-resource "aws_subnet" "database" {
-  count = "${var.subnet_count}"
-  availability_zone = "${data.aws_availability_zones.available.names[count.index]}"
-  cidr_block        = "10.0.3${count.index}.0/24"
-  vpc_id            = "${aws_vpc.vpc.id}"
-  
-  tags = {
-     "Name" = "database"
   }
 }
 
