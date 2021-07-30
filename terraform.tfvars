@@ -1,6 +1,6 @@
 aws_region              =   "us-east-1"
 subnet_count            =   "2"
-accessing_computer_ip   =   "172.20.208.1"
+accessing_computer_ip   =   "ip"
 keypair-name            =   "chaos-testing"
 cluster_version		    =   "1.17"
 # hosted_zone_id          =   "placeholder"
